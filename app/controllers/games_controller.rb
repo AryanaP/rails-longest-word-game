@@ -22,6 +22,11 @@ class GamesController < ApplicationController
     # RUN THE GAME
     @end_time = Time.now
     @attempt = params[:attempt]
+    if session[:number_games] != nil
+      session[:number_games] += 1
+    else
+      session[:number_games] = 1
+    end
     @duration = (@end_time - params[:start].to_time).round(2)
     @translation = translate(@attempt)
      if !in_grid?(@attempt, params[:grid].split(","))

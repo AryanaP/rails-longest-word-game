@@ -6,3 +6,6 @@
 <p> Translation: <%= @translation %> </p>
 <p> Your score: <%= @score %> </p>
 <p> Message: <%= @message %> </p>
+<p> Game number <%= session[:number_games] %> </p>
+
+<%= link_to "Play again!", game_path %>
