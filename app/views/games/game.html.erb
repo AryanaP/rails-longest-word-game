@@ -1,0 +1,24 @@
+<h1>Game</h1>
+<h2>Welcome to the longest word-game !</h2>
+
+<!-- start> -->
+  <form action="/game">
+    <label for="question">Indicate number of letters :</label>
+    <input type="text" id="question" name="grid_size" placeholder="type a message" >
+    <input type="submit" value="Start !">
+    </form>
+
+<p>Here is your grid : <%= @grid_answer %> </p>
+
+<p>What's your best shot ?</p>
+<!-- ajouter la durée -->
+<!-- ajouter le attempt -->
+  <form action="/score">
+    <input type="hidden" value="<%= @start_time %>" name="start">
+     <input type="hidden" value="<%= @grid_answer %>" name="grid">
+    <label for="question">Your word :</label>
+    <input type="text" id="question" name="attempt" placeholder="type a message">
+    <input type="submit" value="I'm done!">
+  </form>
+
+<!-- Cliquer et envoyer vers score -->
